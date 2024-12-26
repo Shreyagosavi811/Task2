@@ -1,0 +1,259 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFF5E1 url('https://images.squarespace-cdn.com/content/v1/60956f69f8fafe4b3e171dcd/2f5dd232-fa5f-43f5-a07f-54021818da4f/desk+writer.jpg?format=1500w') no-repeat center center fixed;
+    background-size: cover;
+    padding: 2rem;
+}
+
+
+header {
+    text-align: center;
+    
+}
+h1, h2 {
+    font-family: 'Merriweather', serif; 
+    color: #ffffff; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 2px #2C041D;
+}
+
+/* Navbar */
+nav {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #2C041D;
+    text-shadow:4px 4px 4px lavender;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: 'Garamond', serif;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f8fafc;
+    text-shadow: 4px 4px 4px #2C041D;
+    box-decoration-break: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+ #create-btn a {
+    color: #2C041D;         
+    text-decoration: none;  
+    font-size: 18px;       
+    font-weight: bold;   
+}
+
+#create-btn a:hover {
+    color: palegoldenrod;
+    text-shadow: 1px 1px 1px #2C041D;
+    text-decoration: underline;
+}
+
+/* Hide Delete Button by Default */
+.hidden {
+    display: none;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.delete-btn:hover {
+    background: teal;
+}
+
+
+/* Blog Form Styles */
+#blog-container, .blog-list {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    justify-content: center;
+    justify-items: center;
+}
+
+#blog-form input, #blog-form textarea, #blog-form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    background-color: #2C041D;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white; 
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+
+}
+
+#blog-form button {
+    background: #3498db;
+    color: #FFF5E1;
+    border: none;
+    cursor: pointer;
+}
+
+#blog-form button:hover {
+    background: #2980b9;
+}
+
+.blog-card {
+    background: #FFF5E1;
+    border: 1px solid #2C041D;
+    color: #4B0082; 
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    justify-items: center;
+}
+/* Make images responsive */
+.blog-card img {
+    width: auto;  
+    height: auto; 
+    max-width: 100%; 
+    object-fit: cover;
+    border: 1px solid #2C041D;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    border-radius: 8px;  
+}
+.blog-card p {
+    color: #4B0082; 
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        padding: 1rem;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+}
+
+/* Authentication Page Styles */
+
+.auth-container {
+    background: #2C041D;
+    border: 2px solid peachpuff;
+    color: peachpuff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px black;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.auth-container label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.auth-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.auth-container button:hover {
+    background-color: #2980b9;
+}
+
+.auth-container p {
+    margin-top: 1rem;
+}
+
+.auth-container a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+

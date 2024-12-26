@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+     font-family: Arial, sans-serif;
+     padding: 2rem;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+ }
+     </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+        <br><br>
+        <li><a href="signup.html">signup</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </nav>
+    <ul id="nav-links" class="hidden">
+        <li><a href="home.html">Home</a></li>
+        <br><br>
+        <li><a href="signup.html">signup</a></li>
+    </ul>
+<div class="auth-container">
+    <h2>Login to Admin</h2>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="login-username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="login-password" required>
+
+        <button type="submit">Login</button>
+    
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+</div>
+<!-- JavaScript Code at the End -->
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('nav-links').classList.toggle('hidden');
+    });
+</script>
+
+<!-- External Script -->
+<script src="script.js" defer></script>
+</body>
+</html>

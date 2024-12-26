@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #2C041D;
+    
+}
+
+.about-box {
+    background: peachpuff;
+    padding: 2rem;
+    border-radius: 8px;
+    width: auto;
+    opacity: 0.9;
+    border: 2px solid #2C041D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contributor-box {
+    background: peachpuff;
+    padding: 2rem;
+    border-radius: 8px;
+    width: auto;
+    border: 2px solid #2C041D;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.contributor-img {
+    border-radius: 50%;
+    border: 2px solid maroon;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </nav>
+    
+        <ul id="nav-links" class="hidden">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Create Blog</a></li>
+        </ul>
+    </header>
+
+    <section class="about">
+        <h1>About Us</h1>
+        <div class="about-box">
+            <p>Welcome to Short Blogs, your destination for quick, engaging, and informative content. We share bite-sized articles across diverse topics, designed for busy readers. Our mission is to inspire, educate, and entertain through well-crafted short reads. Explore, learn, and enjoy—one short blog at a time!</p>
+        </div>
+        
+        <h1>Contributors</h1>
+        <div class="contributor-box">
+            <img src="https://th.bing.com/th/id/OIP.CApM51Mt_rOXEy6whibaPwAAAA?w=140&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Gojo Saturo" class="contributor-img">
+            <h4>Gojo Saturo</h4>
+            <p>He's a well-known Anime Blogger who has been collaborating with us since 2023, sharing his well-known blogs like "Jujutsu Kaisen".</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Blog | All Rights Reserved</p>
+        <p>Coded with ❤ By Shreya Gosavi</p>
+    </footer>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('hidden');
+        });
+    </script>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

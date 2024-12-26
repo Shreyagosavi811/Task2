@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blogs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Shared Styles */
+.hidden { display: none; }
+.blog-card { border: 1px solid #ccc; padding: 16px; margin: 16px 0; background: #FFF5E1;color:#4B0082;justify-content: center;justify-items: center; }
+.blog-card img { width: 50%; height: auto;  max-width: 100%;object-fit: cover; object-position: center;}
+.blog-card h3 { margin-top: 0; }
+.rating .star { font-size: 24px; cursor: pointer; }
+.rating .star.filled { color: rgb(241, 240, 234); }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </nav>
+
+    <ul id="nav-links" class="hidden">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Create Blog</a></li>
+    </ul>
+</header>
+
+<!-- Published Blogs Display -->
+<div id="published-blogs" class="blog-list">
+    <h2>Published Blogs</h2>
+</div>
+
+<!-- JavaScript Code at the End -->
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('nav-links').classList.toggle('hidden');
+    });
+</script>
+
+<!-- External Script -->
+<script src="script.js" defer></script>
+<script>
+    //BLOG DISPLAY//
+// Elements Selection
+const publishedBlogs = document.getElementById('published-blogs');
+
+// Load Blogs for Public View (No Delete Button)
+function loadBlogs() {
+    publishedBlogs.innerHTML = '<h2>Published Blogs</h2>';
+    const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+
+    blogs.forEach((blog, index) => {
+        const blogCard = document.createElement('div');
+        blogCard.classList.add('blog-card');
+        blogCard.innerHTML = `
+            <img src="${blog.image}" alt="${blog.title}">
+            <h3>${blog.title}</h3>
+            <p>${blog.content}</p>
+            <div class="rating" data-index="${index}">
+                ${renderStars(blog.rating)}
+            </div>
+        `;
+
+        // Enable Rating for All Users
+        const ratingContainer = blogCard.querySelector('.rating');
+        ratingContainer.addEventListener('click', (event) => handleRating(event, index));
+
+        publishedBlogs.appendChild(blogCard);
+    });
+}
+
+// Render Star Ratings
+function renderStars(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+        stars += `<span class="star ${i <= rating ? 'filled' : ''}" data-rating="${i}">⭐</span>`;
+    }
+    return stars;
+}
+
+// Handle Star Rating Click
+function handleRating(event, blogIndex) {
+    if (event.target.classList.contains('star')) {
+        const selectedRating = parseInt(event.target.dataset.rating);
+        const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+
+        if (blogs[blogIndex]) {
+            blogs[blogIndex].rating = selectedRating;  // Update Rating
+            localStorage.setItem('blogs', JSON.stringify(blogs));
+            loadBlogs();  // Refresh Blogs
+        }
+    }
+}
+
+// Initialize Public Blog Page
+document.addEventListener('DOMContentLoaded', () => {
+    loadBlogs();  // Load Blogs on Page Load
+});
+
+</script>
+
+</body>
+</html>
